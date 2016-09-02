@@ -1,0 +1,13 @@
+# Twilio Complete Call Record
+
+Main drawback of twilio is we cannot record complete call. Only calls dialled after accepting call will be recorded. By using this scenario, we can completely record a call.
+
+For this, we need two twilio numbers. In this project, i have developed a small ivr where call will be redirected to an agent when caller press one. By this project, we will get complete call record in status callback script.
+
+Let us consider caller calls to number A. A's voice url should be configured to www.your-domain.com/twilio-complete-call-record/incoming.php and status callback url as www.your-domain.com/twilio-complete-call-record/status_callback.php.
+
+From incoming.php, call will be dialled to another twilio number B. B's voice url should be configured to www.your-domain.com/twilio-complete-call-record/call_handler_one.php.
+
+In config.php, save this B number as twilio_redirect_num. Also, save your agents number as agent_number in config.php.
+
+After completing call to agent, call recording will be availabel in recordings folder.
